@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 const live = process.env.PLAYWRIGHT_BASE_URL;
 export default defineConfig({
   testDir: './tests',
-  testMatch: '**/e2e.spec.ts',
+  testMatch: '**/*.spec.ts',
   workers: 1,
   fullyParallel: false,
   retries: 0,

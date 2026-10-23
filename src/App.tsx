@@ -84,6 +84,8 @@ export default function App() {
   const [jsonInput, setJsonInput] = useState('');
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
+  const [readingFile, setReadingFile] = useState(false);
+  const fileSequence = useRef(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
   const t = copy[language];
@@ -146,18 +148,21 @@ export default function App() {
     setNotice('');
   }
   function openJson(tab: 'export' | 'import') {
+    invalidateFile();
     openerRef.current =
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setError('');
     setDialogTab(tab);
   }
   function closeJson() {
+    invalidateFile();
     dialogRef.current?.close();
     setDialogTab(null);
     setError('');
     openerRef.current?.focus();
   }
   function loadJson() {
+    if (readingFile) return;
     try {
       const imported = importTrace(jsonInput);
       setScenario(imported.scenario);
@@ -172,7 +177,13 @@ export default function App() {
       setError(t.invalid);
     }
   }
+  function invalidateFile() {
+    fileSequence.current++;
+    setReadingFile(false);
+  }
   async function loadFile(event: ChangeEvent<HTMLInputElement>) {
+    const operation = ++fileSequence.current;
+    setReadingFile(false);
     const file = event.target.files?.[0];
     event.target.value = '';
     if (!file) return;
@@ -181,10 +192,16 @@ export default function App() {
       return;
     }
     try {
-      setJsonInput(await file.text());
+      setReadingFile(true);
+      const text = await file.text();
+      if (operation !== fileSequence.current) return;
+      setJsonInput(text);
       setError('');
     } catch {
+      if (operation !== fileSequence.current) return;
       setError(t.fileError);
+    } finally {
+      if (operation === fileSequence.current) setReadingFile(false);
     }
   }
   function download() {
@@ -422,7 +439,12 @@ export default function App() {
               <span className={`logic-dot ${logic}`} />
             </div>
             <div className="toolbar-actions">
-              <button className="tool-button" data-testid="reset" onClick={() => reset()}>
+              <button
+                className="tool-button"
+                data-testid="reset"
+                aria-label={t.reset}
+                onClick={() => reset()}
+              >
                 <RotateCcw size={14} />
                 <span>{t.reset}</span>
               </button>
@@ -891,6 +913,7 @@ export default function App() {
           <button
             className={dialogTab === 'export' ? 'active' : ''}
             onClick={() => {
+              invalidateFile();
               setDialogTab('export');
               setError('');
             }}
@@ -900,6 +923,7 @@ export default function App() {
           <button
             className={dialogTab === 'import' ? 'active' : ''}
             onClick={() => {
+              invalidateFile();
               setDialogTab('import');
               setError('');
             }}
@@ -918,6 +942,7 @@ export default function App() {
           value={dialogTab === 'export' ? traceJson : jsonInput}
           placeholder={t.jsonPlaceholder}
           onChange={(event) => {
+            invalidateFile();
             setJsonInput(event.target.value);
             setError('');
           }}
@@ -946,7 +971,7 @@ export default function App() {
                 data-testid="json-apply"
                 className="button primary"
                 onClick={loadJson}
-                disabled={!jsonInput.trim()}
+                disabled={readingFile || !jsonInput.trim()}
               >
                 <ShieldCheck size={15} />
                 {t.load}

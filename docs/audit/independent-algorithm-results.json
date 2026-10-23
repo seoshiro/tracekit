@@ -1,0 +1,9 @@
+{
+  "seed": 99222801,
+  "result": {
+    "cases": 320,
+    "scenarios": 2,
+    "eventTotal": 15973,
+    "checks": "independent fixed arithmetic oracle at every state; both deliberate buggy modes replay; byte stable export/import; truthful expected/actual field values"
+  }
+}

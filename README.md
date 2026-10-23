@@ -1,5 +1,7 @@
 # TRACEKIT
 
+[Independent deep audit and verified repair (23 October 2026)](docs/audit/QA-2026-10-23.md)
+
 **Make bugs reproducible.** A tiny TypeScript event recorder and a client-side debugging workbench for an explicitly instrumented, synthetic checkout.
 
 [Open the workbench](https://seoshiro.github.io/tracekit/) · [Core package](packages/tracekit) · [Security and independent audit](docs/AUDIT.md)

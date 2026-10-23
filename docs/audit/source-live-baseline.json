@@ -1,0 +1,58 @@
+{
+  "repo": "tracekit",
+  "commit": "801154dac7eb2d8774d5e8e066f56d0e832d3198",
+  "sourceStatus": "",
+  "files": [
+    {
+      "path": "assets/index-DSfLxItF.css",
+      "bytes": 34636,
+      "gzipBytes": 7870,
+      "sha256": "58a9a4e0361f7c7da7acc0846fd7d0a4de440797ac90a17cb7f869c3f8016a84",
+      "remoteStatus": 200,
+      "remoteBytes": 34636,
+      "remoteSHA256": "58a9a4e0361f7c7da7acc0846fd7d0a4de440797ac90a17cb7f869c3f8016a84",
+      "match": true
+    },
+    {
+      "path": "assets/index-DuP7-VxX.js",
+      "bytes": 268336,
+      "gzipBytes": 83114,
+      "sha256": "121bc3a1a5b8ebc2bb07474ac0c734066b73f7c2fd559ea20e6c7d2dad0245af",
+      "remoteStatus": 200,
+      "remoteBytes": 268336,
+      "remoteSHA256": "121bc3a1a5b8ebc2bb07474ac0c734066b73f7c2fd559ea20e6c7d2dad0245af",
+      "match": true
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 237,
+      "gzipBytes": 182,
+      "sha256": "a15f9fa68c1f091a5c459eb4159caaed6a8a384ac6c36ea938362dee4eab16e0",
+      "remoteStatus": 200,
+      "remoteBytes": 237,
+      "remoteSHA256": "a15f9fa68c1f091a5c459eb4159caaed6a8a384ac6c36ea938362dee4eab16e0",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 1076,
+      "gzipBytes": 574,
+      "sha256": "c949fe77d0d5ec8cb3bbc4489b9bf54c6568b432a05359914f945d4cca3fc7b0",
+      "remoteStatus": 200,
+      "remoteBytes": 1076,
+      "remoteSHA256": "c949fe77d0d5ec8cb3bbc4489b9bf54c6568b432a05359914f945d4cca3fc7b0",
+      "match": true
+    },
+    {
+      "path": "release-manifest.json",
+      "bytes": 735,
+      "gzipBytes": 401,
+      "sha256": "bcbcdd2a6005fa63fce5f4d92e96ac56e5db2d71835f684d8475b7b95a4d2cb5",
+      "remoteStatus": 200,
+      "remoteBytes": 735,
+      "remoteSHA256": "bcbcdd2a6005fa63fce5f4d92e96ac56e5db2d71835f684d8475b7b95a4d2cb5",
+      "match": true
+    }
+  ],
+  "allMatched": true
+}

@@ -83,6 +83,23 @@ function integer(value: unknown, min: number, max: number, label: string): asser
   }
 }
 
+/** Arrays are data too: do not execute index getters or consume inherited/hidden entries. */
+function dataArray(value: unknown, label: string): asserts value is unknown[] {
+  if (
+    !Array.isArray(value) ||
+    Object.getPrototypeOf(value) !== Array.prototype ||
+    value.length > MAX_EVENTS
+  )
+    fail(`${label} must be a plain array with at most ${MAX_EVENTS} entries.`);
+  if (Reflect.ownKeys(value).length !== value.length + 1)
+    fail(`${label} must contain only dense data entries.`);
+  for (let index = 0; index < value.length; index += 1) {
+    const descriptor = Object.getOwnPropertyDescriptor(value, String(index));
+    if (!descriptor || !('value' in descriptor) || !descriptor.enumerable)
+      fail(`${label} must contain enumerable data entries only.`);
+  }
+}
+
 function scenarioValue(value: unknown): asserts value is ScenarioId {
   if (value !== 'coupon-ghost' && value !== 'shipping-drift') fail('unsupported scenario.');
 }
@@ -222,8 +239,7 @@ export function recordTrace(
 ): Trace {
   scenarioValue(scenario);
   logicValue(logic);
-  if (!Array.isArray(events) || events.length > MAX_EVENTS)
-    fail(`events must be an array with at most ${MAX_EVENTS} entries.`);
+  dataArray(events, 'events');
   const entries: TraceEntry[] = [];
   let state = initialState();
   for (let index = 0; index < events.length; index += 1) {
@@ -267,8 +283,7 @@ function validatedTrace(value: unknown): Trace {
   stateValue(data.initialState);
   if (compareStates(initialState(), data.initialState).length > 0)
     fail('initial state must match the canonical demo state.');
-  if (!Array.isArray(data.entries) || data.entries.length > MAX_EVENTS)
-    fail(`entries must be an array with at most ${MAX_EVENTS} entries.`);
+  dataArray(data.entries, 'entries');
   const events: DemoEvent[] = [];
   let state = initialState();
   for (let index = 0; index < data.entries.length; index += 1) {

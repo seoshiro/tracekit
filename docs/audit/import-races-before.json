@@ -1,0 +1,28 @@
+[
+  {
+    "repo": "tracekit",
+    "name": "closed-import-race",
+    "status": "FAIL",
+    "expected": "{\"audit\":\"NEWER_MANUAL_DRAFT\"}",
+    "actual": "{\"audit\":\"STALE_A_FROM_OLDER_FILE_READ\"}",
+    "disabledAfterRead": false,
+    "steps": [
+      "open import",
+      "select controlled deferred File.text slow-a.json",
+      "Escape",
+      "reopen import",
+      "type newer manual draft",
+      "complete older File.text",
+      "read textarea"
+    ],
+    "screenshot": "tracekit-closed-import-race-FAIL.png"
+  },
+  {
+    "repo": "tracekit",
+    "name": "two-file-read-race",
+    "status": "FAIL",
+    "expected": "{\"audit\":\"NEWER_FILE_B\"}",
+    "actual": "{\"audit\":\"STALE_A_FROM_OLDER_FILE_READ\"}",
+    "screenshot": "tracekit-two-file-read-race-FAIL.png"
+  }
+]

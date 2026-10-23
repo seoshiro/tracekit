@@ -364,7 +364,7 @@ main {
   border: 1px solid #d4ddc1;
   background: #e8eeda;
   padding: 3px;
-  color: #657052;
+  color: #596547;
 }
 .graphic-code {
   display: flex;
@@ -2104,9 +2104,6 @@ footer a:hover {
   }
   .tool-button svg {
     width: 12px;
-  }
-  .tool-button[data-testid='reset'] > span {
-    display: none;
   }
   .tool-button[data-testid='reset'] {
     min-width: 26px;
