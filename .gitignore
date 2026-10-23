@@ -1,0 +1,11 @@
+node_modules/
+dist/
+packages/tracekit/dist/
+playwright-report/
+test-results/
+INTEGRATION.md
+.21st/
+*.log
+.env*
+!.env.example
+.DS_Store

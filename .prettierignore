@@ -1,0 +1,8 @@
+node_modules
+dist
+packages/tracekit/dist
+playwright-report
+test-results
+INTEGRATION.md
+.21st
+package-lock.json
