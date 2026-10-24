@@ -1,4 +1,6 @@
-# Release evidence
+# Original v1.0 release evidence
+
+This page records the original 23 October 2026 release. Its test counts and screenshots are historical. See the [24 October design and functional audit](audit/UIUX-2026-10-24.md) for current regression counts, repairs, limitations and release verification.
 
 TRACEKIT v1.0 is a static application and a private repository-local TypeScript package. No npm publication, credentials, paid APIs, backend or database are involved.
 
