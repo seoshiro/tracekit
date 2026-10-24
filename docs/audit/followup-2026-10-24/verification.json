@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-24",
+  "repo": "tracekit",
+  "localE2E": {
+    "repo": "tracekit",
+    "exitCode": 0,
+    "stats": {
+      "startTime": "2026-10-24T09:22:37.695Z",
+      "duration": 14486.918000000001,
+      "expected": 14,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "sourceReview": {
+    "errors": 1,
+    "warnings": 0,
+    "suggestions": 292
+  },
+  "sourceUnchangedByCLI": true,
+  "cssByteDelta": 80,
+  "dependencyChange": false,
+  "screenshots": [
+    {
+      "file": "before-modal.png",
+      "sha256": "0db80725621a5b940263dfc9c5f69071fd643186017cf6e19d9a7a6d23db1bab",
+      "bytes": 135137
+    },
+    {
+      "file": "after-modal.png",
+      "sha256": "6938cfffa4bc8908a47d916575ac27250d5a22271015c39ca0763eb225f9c029",
+      "bytes": 133055
+    }
+  ],
+  "limits": [
+    "Chromium only",
+    "Emulated touch opening and real wheel input; no physical-device claim"
+  ],
+  "release": "Exact SHA, CI and live checks are supplied in final delivery; existing live workflow gates production."
+}

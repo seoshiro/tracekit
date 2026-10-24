@@ -1,0 +1,47 @@
+{
+  "completedAt": "2026-10-24T09:27:40.971Z",
+  "package": {
+    "name": "@21st-dev/cli",
+    "version": "1.18.0",
+    "integrity": "sha512-rV8X5asUb0Qyvyc2ZD+itxL/u6VgyovuPIVc7wwBrvSNfdsWXxNGcYqfhrA4PMJ+/CqWVhm1jEl5/w36N91JWw=="
+  },
+  "mode": "read-only local; no login/upload/fix; blank token prevents stored-auth read and telemetry",
+  "reviews": [
+    {
+      "repo": "tracekit",
+      "version": "1.18.0",
+      "command": "21st review src --json --token \"\"",
+      "exitCode": 1,
+      "sourceUnchanged": true,
+      "filesReviewed": 5,
+      "summary": {
+        "errors": 1,
+        "warnings": 0,
+        "suggestions": 292
+      },
+      "findings": 293,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "sha256": "83b5bed9943696ee84873d8320a39834aab266c6f30874ef583d328073a8dd59"
+        },
+        {
+          "path": "i18n.ts",
+          "sha256": "5c2ccdbd79e0c3afcb45546d2a9006c7c1843db299a21a369d988418a0b95f42"
+        },
+        {
+          "path": "main.tsx",
+          "sha256": "240903a71d5933c9b6910e054295ec4551c18803cd024ad6ef6d52134d96202a"
+        },
+        {
+          "path": "refinements.css",
+          "sha256": "0c557572bc98f7ee5cc1b68e2fb6224a4faf02f0f04af6d7d5b4085f76559afa"
+        },
+        {
+          "path": "styles.css",
+          "sha256": "42854de0c025dea2f9dbc265b502e4dec26b36568c029c53a1ca04311d27ad3e"
+        }
+      ]
+    }
+  ]
+}
