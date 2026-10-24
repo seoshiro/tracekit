@@ -42,6 +42,7 @@ import type { CheckoutState, DemoEvent, LogicMode, ScenarioId } from '../package
 import { copy } from './i18n';
 import type { Language } from './i18n';
 import './styles.css';
+import './refinements.css';
 
 const money = (value: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value / 100);
@@ -135,6 +136,14 @@ export default function App() {
     setCursor(sequence.length);
     setPlaying(false);
     setNotice('');
+    focusComparison();
+  }
+  function focusComparison() {
+    window.requestAnimationFrame(() => {
+      const comparison = document.getElementById('comparison-title');
+      comparison?.focus({ preventScroll: true });
+      comparison?.scrollIntoView({ block: 'nearest' });
+    });
   }
   function dispatch(event: DemoEvent) {
     if (cursor >= 100) {
@@ -699,7 +708,9 @@ export default function App() {
               aria-labelledby="comparison-title"
             >
               <div className="panel-heading">
-                <h2 id="comparison-title">{t.comparison}</h2>
+                <h2 id="comparison-title" tabIndex={-1}>
+                  {t.comparison}
+                </h2>
                 <span className="panel-icon">
                   <Braces size={15} />
                 </span>
@@ -715,6 +726,20 @@ export default function App() {
                   <span>{divergent ? 'DIFF' : 'PASS'}</span>
                 </div>
                 <p className="comparison-description">{divergent ? t.mismatchBody : t.matchBody}</p>
+                {divergent && logic === 'buggy' && (
+                  <button
+                    className="button comparison-fix"
+                    data-testid="compare-fix"
+                    onClick={() => {
+                      setPlaying(false);
+                      setLogic('fixed');
+                      focusComparison();
+                    }}
+                  >
+                    <CheckCheck size={15} />
+                    {language === 'en' ? 'Replay with fixed logic' : 'Повторить с исправлением'}
+                  </button>
+                )}
                 <div className="totals-comparison">
                   <div>
                     <span>{t.expected}</span>
@@ -802,7 +827,16 @@ export default function App() {
                 {firstDivergence > 0 && (
                   <button
                     className="first-divergence"
-                    onClick={() => stopAndSelect(firstDivergence)}
+                    onClick={() => {
+                      stopAndSelect(firstDivergence);
+                      window.requestAnimationFrame(() =>
+                        document
+                          .querySelector<HTMLButtonElement>(
+                            `[data-testid="timeline-step-${firstDivergence}"]`,
+                          )
+                          ?.focus(),
+                      );
+                    }}
                   >
                     <span className="red-dot" />
                     {language === 'en'

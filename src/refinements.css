@@ -1,0 +1,93 @@
+.comparison-fix {
+  width: 100%;
+  min-height: 44px;
+  margin: 0 0 18px;
+  border: 1px solid #9cae78;
+  background: #edf3e1;
+  color: #334628;
+  font-size: 12px;
+}
+.comparison-fix:hover {
+  background: #e3edcf;
+}
+.comparison-panel h2:focus-visible {
+  outline: 2px solid #638425;
+  outline-offset: 4px;
+}
+.first-divergence {
+  min-height: 44px;
+  font-size: 12px;
+}
+@media (max-width: 650px) {
+  .intro-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .intro p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .intro .eyebrow {
+    font-size: 10px;
+  }
+  .button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .toolbar-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 5px;
+  }
+  .tool-button {
+    min-height: 44px;
+    min-width: 0;
+    padding: 5px;
+    font-size: 11px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+  .toolbar-actions .export-button {
+    margin-left: 0;
+  }
+  .event-copy strong {
+    font-size: 12px;
+  }
+  .event-copy small,
+  .event-time,
+  .scenario-button small,
+  .empty-timeline p {
+    font-size: 11px;
+  }
+  .scenario-button strong {
+    font-size: 12px;
+  }
+  .panel-heading h2 {
+    font-size: 14px;
+  }
+  .comparison-description,
+  .scope-intro p,
+  .field-label,
+  .branch-note,
+  .no-payment {
+    font-size: 12px;
+  }
+  .shipping-select,
+  .checkout-form select,
+  #shipping {
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .coupon-button,
+  .checkout-submit {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .json-dialog textarea {
+    font-size: 13px;
+  }
+  .json-dialog .button {
+    min-height: 44px;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "seed": "0x24ff4713",
+  "cases": 300,
+  "snapshots": 15150,
+  "roundTrips": 300,
+  "tamperRejections": 295,
+  "metamorphicRepairs": 298,
+  "failures": []
+}

@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-24",
+  "repo": "tracekit",
+  "baseline": "31c19c61bb4018412fbe661d1695c084bdbfe8e2",
+  "unitTests": 61,
+  "finalLocalE2E": {
+    "startTime": "2026-10-24T08:27:53.638Z",
+    "duration": 11496.137,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "visualChecks": [
+    {
+      "repo": "tracekit",
+      "name": "fresh/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fresh/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fresh/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fresh/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-focuses-comparison",
+      "pass": true
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-contextual-fix/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-contextual-fix/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-contextual-fix/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-contextual-fix/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fixed/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fixed/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fixed/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fixed/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "fixed-focuses-comparison",
+      "pass": true
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-ru/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-ru/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-ru/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "demo-ru/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "tracekit",
+      "name": "no-browser-pageerrors",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "sharedInteraction": {
+    "baseline": {
+      "passed": 44,
+      "failed": 4,
+      "errors": 0
+    },
+    "firstCandidate": {
+      "passed": 47,
+      "failed": 1,
+      "errors": 0
+    },
+    "finalFocusedCases": 17,
+    "axeScans": 7,
+    "axeViolations": 0
+  },
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 320,
+      "height": 844
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "browser": "Chromium 156.0.8078.4, installed Playwright on Windows",
+  "limits": [
+    "Chromium only",
+    "No physical-device, native browser zoom or human screen-reader speech verification"
+  ],
+  "screenshots": [
+    {
+      "path": "before-demo-320.png",
+      "bytes": 127815,
+      "sha256": "3cc80326057557be7740728a17b35996d692a37adc92d17eb86c81d4effdf215",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-demo-320.png",
+      "bytes": 133992,
+      "sha256": "53dd0d17328b730ffd8fcdd2390fd68b5a09c59971ed2170cc57a78286a7eafa",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-fixed-320.png",
+      "bytes": 127160,
+      "sha256": "fbf433efdb906f7e68c43ec7314bafc8ecef6bb9ed558f40d1ce3d696251e635",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-ru-320.png",
+      "bytes": 150784,
+      "sha256": "9e175e5a4ebb38aaed0a7bf6293f30aee5e761150ce866bff4b2b650a93cc100",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-ru-320.png",
+      "bytes": 143831,
+      "sha256": "689f687d9b68536ca4897d59e575e9c62c42cf6269f943b4c45da5ffbb67b22d",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    }
+  ],
+  "release": "CI live job and final delivery identify exact source SHA after deploy; candidate screenshots intentionally retain baseline footer until committed build"
+}
